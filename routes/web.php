@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TaskController;
+use App\Http\Controllers\Admin\DashboardController as DashboardController;
+use App\Http\Controllers\Admin\StatsController as StatsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,11 +74,11 @@ Route::middleware('auth')->group(function() {
 
         // Task 10: point URL /admin/dashboard to a "Single Action" Admin/DashboardController
         // Put one code line here below
-        Route::get('dashboard', adminDashboardController::class);
+        Route::get('dashboard', DashboardController::class);
 
         // Task 11: point URL /admin/stats to a "Single Action" Admin/StatsController
         // Put one code line here below
-        Route::get('stats', adminStatsController::class);
+        Route::get('stats', StatsController::class);
 
     // End of the /admin Route Group
     });
